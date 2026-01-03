@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React , {useState} from 'react'
+import { Routes, Route , Link } from 'react-router-dom'
+import Hero from './components/Hero'
+import Home from './pages/Home'
+import About from './pages/About'
+import Search from './pages/Search'
+import Ai from './pages/Ai'
+import Navbar from './components/Navbar'
+import Profile from './pages/Profile'
+import Roleb from './pages/Roleb'
+import Skillb from './pages/Skillb'
+import Footer from './components/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+
+const App = () => {
+  const [nickname, setNickname] = useState("USER");
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="min-h-screen bg-slate-950 flex flex-col"> 
+      <Navbar />
+      <main className="grow md:px-[7vw] lg:px-[9vw]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/ai" element={<Ai />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path='/' element={<Hero nickname={nickname} />} />
+          <Route path='/profile' element={<Profile setGlobalNickname={setNickname} />} /> 
+          <Route path='/roleb'element={< Roleb/>} />
+          <Route  path='/skillb'element={< Skillb/>} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   )
 }
 
