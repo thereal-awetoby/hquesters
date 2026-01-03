@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets.js'
+import { Link } from 'react-router-dom';
 
 const Role = () => {
 
@@ -33,14 +34,13 @@ const Role = () => {
                 ))}
             </div>
             <div className='flex justify-end mt-4'>
-                <a 
-                  href="/role-roadmaps" 
-                  className='text-gray-400 hover:text-white text-sm font-medium flex items-center gap-1 transition-colors underline underline-offset-4 decoration-gray-600'> 
-                  See all role roadmaps
+                <Link  to="/roleb" 
+                  className='text-gray-400 hover:text-white text-sm font-medium flex items-center gap-1 transition-colors underline underline-offset-4'>
+                  See all skill roadmaps
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
-                </a>
+              </Link>
             </div>
         </div>
     </div>

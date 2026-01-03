@@ -7,7 +7,7 @@ const Navbar = () => {
     const[visible, setVisible] = React.useState(false);
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
+    <div className='flex items-center justify-between py-5 font-medium px-4 sm:px-[5vw]'>
       
         <Link to="/"><img src={assets.hqlogo} alt="logo" className='w-36 object-cover'/></Link>
 
